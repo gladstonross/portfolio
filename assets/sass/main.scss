@@ -112,7 +112,7 @@
 		font-size: 19pt;
 		font-weight: 300;
 		line-height: 1.75em;
-		color: #888;
+		color: #262626;
 
 		// Stops initial animations until page loads.
 			&.is-preload {
@@ -193,7 +193,7 @@
 		outline: 0;
 
 		&:hover {
-			color: #E27689;
+			color: #FF5722;
 			border-bottom-color: rgba(255, 255, 255, 0);
 		}
 	}
@@ -232,9 +232,11 @@
 /* Container */
 
 	.container {
+		position: relative;
 		margin: 0 auto;
 		max-width: 100%;
 		width: 1400px;
+		z-index: 1;
 
 		@include breakpoint('wide') {
 			width: 1200px;
@@ -324,14 +326,30 @@
 		}
 
 		&.fit {
+			position: relative;
 			display: block;
 			width: 100%;
+
+			&::after{
+				display: block;
+				position: absolute;
+				opacity: .9;
+				content: '';
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: linear-gradient(hsla(280, 96%, 22%, 0.13), hsla(0, 0%, 0%, 0.88));
+			}
 		}
 
 		&.featured {
 			display: block;
-			width: 100%;
-			margin: 0 0 2em 0;
+	    width: 111px;
+	    border-radius: 50%;
+	    margin: 0 auto 10px;
+	    overflow: hidden;
+	    height: 111px;
 		}
 
 		&.left {
@@ -524,12 +542,14 @@
 /* Item */
 
 	.item {
+		display: flex;
 		box-shadow: 0 0.05em 0.15em 0 rgba(0, 0, 0, 0.05);
 		margin-bottom: 40px;
 
 		header {
 			background: #fff;
 			margin: 0;
+			width: 100%;
 			padding: 1em 0 1em 0;
 			font-size: 0.8em;
 
@@ -564,6 +584,10 @@
 				font-family: 'Font Awesome 5 Brands';
 			}
 		}
+	}
+
+	.__fw{
+		font-size: 3em !important;
 	}
 
 /* Header */
@@ -767,11 +791,17 @@
 			}
 
 			&.two {
-				background-color: #f5fafa;
+				background-color: hsla(266, 81%, 98%, 1);
 			}
 
 			&.three {
-				background-color: #ecf1f1;
+				position: relative;
+				background-color: #2e2e2e;
+        color: #bfbfbf;
+
+				h2{
+					color: #eaeaea;
+				}
 			}
 
 			&.four {
@@ -781,6 +811,59 @@
 	}
 
 /* Wide */
+
+	.square{
+		position: absolute;
+		right: -40px;
+		bottom: 25%;
+		width: 364px;
+    height: 300px;
+		border-radius: 60px;
+		background-color: hsla(60, 67%, 99%, 0.04);
+		z-index: 0;
+		animation: spin 8s ease infinite;
+	}
+
+	.__spacer{
+		height: 3rem;
+		background: #222629;
+	}
+
+	@keyframes spin{
+		0%{
+			transform: rotate(260deg);
+			}
+
+
+		20%{
+			transform: rotate(300deg);
+			transform: translate(20px,30px);
+			width: 264px;
+	    height: 200px;
+			background-color: rgba(165, 114, 197, 0.04);
+			}
+
+			40%{
+				transform: rotate(360deg);
+				}
+
+			60%{
+				width: 290px;
+		    height: 250px;
+				transform: rotate(0deg);
+				background-color: hsla(197, 47%, 20%, 0.25);
+				}
+
+
+			80%{
+				transform: rotate(300deg);
+				}
+
+				100%{
+					transform: rotate(260deg);
+					}
+
+	}
 
 	@include breakpoint('wide') {
 
