@@ -301,6 +301,34 @@
 		}
 	}
 
+
+	.col-6 {
+		   &:nth-child(even){
+			 .item {
+				 flex-direction: row-reverse;
+			 }
+
+		}
+	}
+
+	.__mb{
+			margin-bottom: 10px;
+	}
+
+	.__btn{
+		border: 1px solid transparent !important;
+		padding: 4px 6px;
+		background: #222729;
+    color: #9d9d9d;
+		border-radius: 4px;
+
+		&:hover{
+			color: #fff;
+			border: 1px solid #a222ff !important;
+			box-shadow: 0 0 3px 0 #a222ff;
+		}
+	}
+
 /* Image */
 
 	.image {

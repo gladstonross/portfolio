@@ -1086,6 +1086,27 @@ section, article {
   .row > section, .row > article {
     margin-bottom: 0; }
 
+.col-6:nth-child(even) .item {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse; }
+
+.__mb {
+  margin-bottom: 10px; }
+
+.__btn {
+  border: 1px solid transparent !important;
+  padding: 4px 6px;
+  background: #222729;
+  color: #9d9d9d;
+  border-radius: 4px; }
+  .__btn:hover {
+    color: #fff;
+    border: 1px solid #a222ff !important;
+    -webkit-box-shadow: 0 0 3px 0 #a222ff;
+    box-shadow: 0 0 3px 0 #a222ff; }
+
 /* Image */
 .image {
   display: inline-block;
