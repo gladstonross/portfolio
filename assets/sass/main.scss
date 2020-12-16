@@ -319,8 +319,11 @@
 		border: 1px solid transparent !important;
 		padding: 4px 6px;
 		background: #222729;
-    color: #9d9d9d;
+        color: #9d9d9d;
 		border-radius: 4px;
+		width: 80%;
+		margin: 1em auto;
+
 
 		&:hover{
 			color: #fff;
@@ -570,6 +573,7 @@
 /* Item */
 
 	.item {
+		height: 100%;
 		display: flex;
 		box-shadow: 0 0.05em 0.15em 0 rgba(0, 0, 0, 0.05);
 		margin-bottom: 40px;
